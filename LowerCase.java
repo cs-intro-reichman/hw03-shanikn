@@ -12,6 +12,23 @@ public class LowerCase {
     */
     public static String lowerCase(String s) {
         // Replace the following statement with your code
-        return null;
+        String answer=new String();
+        for(int i=0;i<s.length();i++)
+        {
+
+            if((s.charAt(i)<(char)65) || (s.charAt(i)>(char)90)) //uppercase characters are between 65 and 90
+            {
+                answer+=s.charAt(i);
+            }
+            else
+            {
+                if(((char)65<=s.charAt(i)) && ((char)90>=s.charAt(i)))
+                {
+                    answer+=(char)(s.charAt(i)+32);
+                }
+            }
+
+        }
+        return answer;
     }
 }
