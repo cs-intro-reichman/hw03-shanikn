@@ -12,6 +12,22 @@ public class UniqueChars {
      */
     public static String uniqueChars(String s) {
         // Replace the following statement with your code
-        return null;
+        String answer=new String();
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i)==(char)32)//32 is space
+            {
+                answer+=s.charAt(i);
+            }
+            else
+            {
+                if(answer.indexOf(s.charAt(i))==-1)
+                {
+                    answer+=s.charAt(i);
+                }
+            }
+        }
+        
+        return answer;
     }
 }
