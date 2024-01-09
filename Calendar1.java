@@ -17,10 +17,11 @@ public class Calendar1 {
 		// Advances the date and the day-of-the-week from 1/1/1900 till 31/12/1999, inclusive.
 	    // Prints each date dd/mm/yyyy in a separate line. If the day is a Sunday, prints "Sunday".
 	    // The following variable, used for debugging purposes, counts how many days were advanced so far.
-	    int debugDaysCounter = 0; 
+	    int debugDaysCounter = 0;
+		int sundays=0; 
 	    //// Write the necessary initialization code, and replace the condition
 	    //// of the while loop with the necessary condition 
-	 	while(year<1904) 
+	 	while(year<2000) 
 		{
 			month=1;
 			while(month<13)//runs on 12 months(a year)
@@ -32,6 +33,10 @@ public class Calendar1 {
 					if(dayOfWeek==1)
 					{
 						System.out.println(dayOfMonth+"/"+month+"/"+year+" Sunday");
+						if(dayOfMonth==1)
+						{
+							sundays++;
+						}
 					}
 					else
 					{
@@ -51,7 +56,7 @@ public class Calendar1 {
 				}
 			year++;
 		}
-		
+		System.out.println("During the 20th century, "+sundays+" sundays fell on the first day of the month");
 			
 		}
 	 		
