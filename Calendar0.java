@@ -23,7 +23,8 @@ public class Calendar0 {
 	// Tests the nDaysInMonth function.
 	private static void nDaysInMonthTest(int year) {
 		// Replace this comment with your code
-		for(int i=1;i<13;i++)
+		// #feedback: just a petty comment - I think it more clear to write the loop condition like this:
+		for(int i=1;i<=12;i++)
 		{
 			System.out.println("Month "+i+" has "+nDaysInMonth(i, year)+" days");
 		}
@@ -48,29 +49,28 @@ public class Calendar0 {
 	public static int nDaysInMonth(int month, int year) {
 		// Replace the following statement with your code
 		int days;
+		// #feedback: bad indentations
 		if(month==4 || month==6 || month==9 || month==11)
+		{
+			days=30;
+		}
+		// #feedback: you can chain these conditions instead of nesting
+		else if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12)
+		{
+			days=31;
+		}
+		else
+		{
+			if(isLeapYear(year))
 			{
-				days=30;
+				days=29;	
 			}
 			else
 			{
-				if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12)
-				{
-					days=31;
-				}
-				else
-				{
-					if(isLeapYear(year))
-					{
-						days=29;	
-					}
-					else
-					{
-						days=28;
-					}
-				}
+				days=28;
 			}
-		
+		}
+	
 		return days;
 	}
 }
