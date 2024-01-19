@@ -40,6 +40,16 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {  
     	// Replace the following statement with your code
+	/*
+ 		#Feedbaack:
+   		It's really bad idea to use same static variable for different calculations of different methods.
+     		However if you do like this way, you should protect yourself from unexpected behaviours.
+		Observe the case when `bisectionSolver` get called before this method - the `iterationCounter` will
+		contain the sum of itterations of both method.
+		To avoid that, you should guard your this method like you did in `bisectionSolver`
+     	*/
+	    	iterationCounter = 0;
+	    
 		double x=loan/n; //min value of x is in case the rate is 0
 		double temp_loan=loan;
 		while(loan>epsilon && x<=temp_loan) 
