@@ -22,10 +22,9 @@ public class LowerCase {
             }
             else
             {
-                if(((char)65<=s.charAt(i)) && ((char)90>=s.charAt(i)))
-                {
+                // #feedback: this condition is always true since it's contained in the 'else' of the opposite condition you wrote above.
+                // !( (x < 65) || (x > 90) ) = ((x >= 65) && (x <= 90))
                     answer+=(char)(s.charAt(i)+32);
-                }
             }
 
         }
